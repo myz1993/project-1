@@ -1,0 +1,16 @@
+@import "./navBar.scss";
+@import "./color.scss";
+@import "./font.scss";
+@import "./home.scss";
+@import "./footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
