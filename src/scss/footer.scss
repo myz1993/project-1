@@ -1,0 +1,16 @@
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  @include mobile {
+    & {
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  span {
+    color: $secondary_color;
+  }
+}

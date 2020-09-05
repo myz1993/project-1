@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>personal website</title>
-  <link rel="stylesheet" href="./scss/index.css">
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="//at.alicdn.com/t/font_2047699_j0arp6mrlmm.js"></script>
+
+  <style type="text/css">
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
 </head>
+
 <body>
   <!-- This is the webpage heeader -->
   <header>
-  <!-- This is pc nav bar -->
+    <!-- This is pc nav bar -->
     <div class="wrapper">
       <div class="logo">
-      <span class="firstname">Jone</span>
-      <span class="surname">Doe</span>
+        <span class="firstname">Jone</span>
+        <span class="surname">Doe</span>
       </div>
-      
-      <button id=xx>nav bar</button>
+
+      <svg class="icon" aria-hidden="true" id="menuButton">
+        <use xlink:href="#icon-caidan"></use>
+      </svg>
 
       <nav class="nav1">
         <a href="">Home</a>
@@ -26,8 +41,8 @@
         <a href="">Contact</a>
       </nav>
     </div>
-<!-- this is ipad nav bar -->
-    <div class="navIpad" id=yy>
+    <!-- this is ipad nav bar -->
+    <div class="navIpad" id="sidebarMenu">
       <nav class="nav2">
         <a href="">Home</a>
         <a href="">Resume</a>
@@ -36,15 +51,80 @@
         <a href="">Contact</a>
       </nav>
     </div>
-    
-    
-
   </header>
 
-<!-- sadfsadf -->
+  <!-- this is home main page -->
   <main>
+    <section class="home">
+      <div class="home_profile">
+        <div class="row">
+          <img class="home_profile_photo" src="./assets/images/photo.png"></img>
+          <div class="home_profile_title">
+            <h2>Lydia Zhang</h2>
+            <div class="position">Web Developer</div>
+            <ul class="socialLinks">
+              <li>
+                <button>
+                  <svg class="icon" aria-hidden="true" id="menuButton">
+                    <use xlink:href="#icon-weibiaoti502"></use>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <svg class="icon" aria-hidden="true" id="menuButton">
+                    <use xlink:href="#icon-instagram"></use>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <svg class="icon" aria-hidden="true" id="menuButton">
+                    <use xlink:href="#icon-changyonglogo44"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
 
+
+          </div>
+        </div>
+      </div>
+
+      <div class="home_details">
+        <div class="home_details_container">
+        <div class="home_details_container_aboutme">
+          <h3>About <span>Me</span></h3>
+          <p>Hello! I’m John Doe. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum ullamcorper
+            sem, at placerat dolor volutpat ac. Duis nulla enim, condimentum nec ultricies.</p>
+        </div>
+
+        <dl>
+          <dt>Age</dt>
+          <dd>27</dd>
+          <dt>Residence</dt>
+          <dd>Australia</dd>
+          <dt>Address</dt>
+          <dd>Unit 3/2 Ascot Street,Melbourne</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:lydiazhang1227@gmail.com">lydiazhang1227@gmail.com</a></dd>
+          <dt>Phone</dt>
+          <dd>0452569690</dd>
+        </dl>
+        </div>
+
+      </div>
+    </section>
   </main>
-  <script src="./js/index.js"></script>
+
+  <footer>
+    ©
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    All rights reserved. Designed by <span>Lydia</span>
+  </footer>
 </body>
+<script src="./js/index.js"></script>
+
 </html>

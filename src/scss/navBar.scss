@@ -1,19 +1,15 @@
-@import "./color.scss";
-
-@mixin ipad {
-  @media (max-width: 900px) {
-    @content;
-  }
-}
-
-@mixin pc {
-  @media (min-width: 901px) {
-    @content;
-  }
-}
+@import './color.scss';
 
 header {
   position: relative;
+  @include mobile {
+    & {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+  }
 
   div.navIpad {
     display: none;
@@ -30,7 +26,6 @@ header {
     nav.nav2 {
       display: flex;
       flex-direction: column;
-      border: solid 1px red;
       height: 300px;
       justify-content: flex-start;
       align-items: center;
@@ -43,9 +38,10 @@ header {
         font-weight: 500;
         font-family: 'Montserrat', Helvetica, sans-serif;
         position: relative;
+        text-align: center;
       }
 
-      a:after {
+      a::after {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -58,8 +54,11 @@ header {
         height: 3px;
       }
 
-      a:hover,
-      a:hover:after {
+      a:hover {
+        min-width: 100px;
+      }
+
+      a:hover::after {
         width: 30%;
         color: $text_color;
         transition: all 0.3s;
@@ -68,11 +67,11 @@ header {
   }
 
   div.wrapper {
-    max-width: 900px;
+    max-width: 1032px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 0;
 
     @include ipad {
       & {
@@ -80,7 +79,12 @@ header {
         background-color: $secondary_color;
       }
     }
-
+    @include mobile {
+      & {
+        padding: 20px;
+        background-color: $secondary_color;
+      }
+    }
 
     div.logo {
       span {
@@ -89,6 +93,16 @@ header {
           font-size: 20px;
           font-weight: 500;
           font-family: 'Montserrat', Helvetica, sans-serif;
+          @include ipad {
+            & {
+              color: white;
+            }
+          }
+          @include mobile {
+            & {
+              color: white;
+            }
+          }
         }
 
         &.surname {
@@ -96,14 +110,31 @@ header {
           font-size: 20px;
           font-weight: 500;
           font-family: 'Montserrat', Helvetica, sans-serif;
+          @include ipad {
+            & {
+              color: white;
+            }
+          }
+          @include mobile {
+            & {
+              color: white;
+            }
+          }
         }
       }
     }
 
-    button {
+    svg#menuButton {
       display: none;
+      color: white;
+      font-size: 30px;
 
       @include ipad {
+        & {
+          display: block;
+        }
+      }
+      @include mobile {
         & {
           display: block;
         }
@@ -118,7 +149,11 @@ header {
           display: none;
         }
       }
-
+      @include mobile {
+        & {
+          display: none;
+        }
+      }
 
       a {
         color: $text_color;
@@ -128,6 +163,10 @@ header {
         padding: 10px;
         position: relative;
         margin: 0 10px;
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+        }
       }
 
       a:after {

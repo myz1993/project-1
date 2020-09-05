@@ -1,0 +1,22 @@
+@import './home.scss';
+@import './resume.scss';
+
+main {
+  width: 100%;
+  @include ipad {
+    & {
+      padding: 20px 20px 0 20px;
+    }
+  }
+  @include mobile {
+    & {
+      padding: 20px 30px 50px 30px;
+      position: absolute;
+      z-index: 50;
+      left: 0;
+      top: 70px;
+      height: calc(100vh - 70px);
+      overflow: scroll;
+    }
+  }
+}

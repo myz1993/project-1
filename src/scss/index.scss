@@ -1,8 +1,26 @@
-@import "./navBar.scss";
-@import "./color.scss";
-@import "./font.scss";
-@import "./home.scss";
-@import "./footer.scss";
+@mixin ipad {
+  @media screen and (min-width: 751px) and (max-width: 1032px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: 1033px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@import './navBar.scss';
+@import './color.scss';
+@import './font.scss';
+@import './main/index.scss';
+@import './footer.scss';
 
 * {
   margin: 0;
@@ -13,4 +31,19 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../assets/images/main_bg.png);
+  background-color: $background_color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Roboto-regular', sans-serif;
 }
