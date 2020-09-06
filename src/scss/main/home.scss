@@ -4,6 +4,8 @@
   margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.1);
+  display: none;
+
   @include mobile {
     & {
       margin-bottom: 20px;
