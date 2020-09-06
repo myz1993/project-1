@@ -297,68 +297,52 @@ header {
     padding: 30px; }
     .resume_body_container {
       display: flex; }
+      @media screen and (max-width: 750px) {
+        .resume_body_container {
+          flex-direction: column; } }
       .resume_body_container_left {
-        margin-right: 20px; }
+        margin-right: 20px;
+        width: 50%; }
+        @media screen and (max-width: 750px) {
+          .resume_body_container_left {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px; } }
         .resume_body_container_left h2 {
           color: #212121;
           font-weight: 600;
           line-height: 1.5em;
           margin-bottom: 20px;
           font-family: 'Montserrat', Helvetica, sans-serif; }
-        .resume_body_container_left .cardSection {
-          padding: 20px 0 20px 20px;
-          border-left: solid 1px #9e9e9e; }
-          .resume_body_container_left .cardSection .card {
-            box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
-            border-left: solid 2px #2eca7f;
-            padding: 20px;
-            position: relative;
-            margin-bottom: 20px; }
-            .resume_body_container_left .cardSection .card:last-child {
-              margin-bottom: 0; }
-            .resume_body_container_left .cardSection .card:before {
-              content: '';
-              display: inline-block;
-              position: absolute;
-              background-color: #fff;
-              border-radius: 10px;
-              width: 12px;
-              height: 12px;
-              border: solid 2px #2eca7f;
-              left: -29px;
-              top: 20px;
-              z-index: 5; }
-            .resume_body_container_left .cardSection .card::after {
-              content: '';
-              display: inline-block;
-              position: absolute;
-              width: 21px;
-              border: solid 1px #2eca7f;
-              left: -25px;
-              top: 27px; }
-            .resume_body_container_left .cardSection .card_title {
-              color: #212121;
-              font-weight: 600;
-              font-size: 16px; }
-            .resume_body_container_left .cardSection .card_company {
-              margin: 5px 0; }
-              .resume_body_container_left .cardSection .card_company .companyYear {
-                font-size: 12px;
-                line-height: 1.2em;
-                color: #2eca7f;
-                padding-right: 5px; }
-              .resume_body_container_left .cardSection .card_company .companyName {
-                font-size: 12px;
-                line-height: 1.2em;
-                color: #9e9e9e;
-                padding-left: 5px;
-                border-left: solid 1px #9e9e9e; }
+      .resume_body_container_right {
+        width: 50%; }
+        @media screen and (max-width: 750px) {
+          .resume_body_container_right {
+            width: 100%; } }
+        .resume_body_container_right h2 {
+          color: #212121;
+          font-weight: 600;
+          line-height: 1.5em;
+          margin-bottom: 20px;
+          font-family: 'Montserrat', Helvetica, sans-serif; }
   .resume_footer {
     padding: 30px; }
+    @media screen and (max-width: 750px) {
+      .resume_footer {
+        padding-top: 0; } }
     .resume_footer_container {
       display: flex; }
+      @media screen and (max-width: 750px) {
+        .resume_footer_container {
+          flex-direction: column; } }
       .resume_footer_container_left {
-        margin-right: 20px; }
+        margin-right: 20px;
+        width: 50%; }
+        @media screen and (max-width: 750px) {
+          .resume_footer_container_left {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px; } }
         .resume_footer_container_left h3 {
           color: #212121;
           font-weight: 600;
@@ -366,6 +350,87 @@ header {
           font-family: 'Montserrat', Helvetica, sans-serif;
           font-size: 21px;
           margin-bottom: 20px; }
+      .resume_footer_container_right {
+        width: 50%; }
+        @media screen and (max-width: 750px) {
+          .resume_footer_container_right {
+            width: 100%; } }
+        .resume_footer_container_right h3 {
+          color: #212121;
+          font-weight: 600;
+          line-height: 1.5em;
+          font-family: 'Montserrat', Helvetica, sans-serif;
+          font-size: 21px;
+          margin-bottom: 20px; }
+
+.cardSection {
+  padding: 20px 0 20px 20px;
+  border-left: solid 1px #9e9e9e; }
+  .cardSection .card {
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    border-left: solid 2px #2eca7f;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px; }
+    .cardSection .card:last-child {
+      margin-bottom: 0; }
+    .cardSection .card:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 10px;
+      width: 12px;
+      height: 12px;
+      border: solid 2px #2eca7f;
+      left: -29px;
+      top: 20px;
+      z-index: 5; }
+    .cardSection .card::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 21px;
+      border: solid 1px #2eca7f;
+      left: -25px;
+      top: 27px; }
+    .cardSection .card_title {
+      color: #212121;
+      font-weight: 600;
+      font-size: 16px; }
+    .cardSection .card_company {
+      margin: 5px 0; }
+      .cardSection .card_company .companyYear {
+        font-size: 12px;
+        line-height: 1.2em;
+        color: #2eca7f;
+        padding-right: 5px; }
+      .cardSection .card_company .companyName {
+        font-size: 12px;
+        line-height: 1.2em;
+        color: #9e9e9e;
+        padding-left: 5px;
+        border-left: solid 1px #9e9e9e; }
+
+.skillbarSection .skillbar {
+  margin-bottom: 10px; }
+  .skillbarSection .skillbar_title {
+    color: #212121;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+    line-height: 1.1em;
+    margin-bottom: 5px; }
+  .skillbarSection .skillbar_container {
+    width: 100%;
+    height: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0; }
+    .skillbarSection .skillbar_container .topBar {
+      width: 90%;
+      height: 10px;
+      background-color: #2eca7f;
+      border: 1px solid #e0e0e0; }
 
 main {
   width: 100%; }
@@ -374,7 +439,7 @@ main {
       padding: 20px 20px 0 20px; } }
   @media screen and (max-width: 750px) {
     main {
-      padding: 20px 30px 50px 30px;
+      padding: 20px 20px 50px 20px;
       position: absolute;
       z-index: 50;
       left: 0;
