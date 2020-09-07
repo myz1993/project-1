@@ -8,6 +8,8 @@ let skillBarSectionForDesign;
 let skillBarSectionForCoding;
 let mainWindow;
 let headerDiv;
+let resumeSection;
+let homeSection;
 
 const data = {
   education: {
@@ -147,6 +149,8 @@ const init = () => {
   skillBarSectionForCoding = document.querySelector('div.resume_footer_container_right .skillbarSection');
   mainWindow = document.querySelector('main');
   headerDiv = document.querySelector('header');
+  resumeSection = document.querySelector('section.resume');
+  homeSection = document.querySelector('section.home');
 };
 
 const handleMenuButtonClick = () => {
@@ -173,10 +177,25 @@ const addOnScrollClassForHeader = (() => {
   };
 })();
 
+const handleHashChange = () => {
+  //if hash is home
+
+  //display home page, hide resume page
+  if (location.hash == '#home') {
+    resumeSection.style.display = 'none';
+    homeSection.style.display = 'block';
+  }
+  if (location.hash == '#resume') {
+    homeSection.style.display = 'none';
+    resumeSection.style.display = 'block';
+  }
+};
+
 const addListeners = () => {
   menuButton.onclick = handleMenuButtonClick;
   window.onresize = handleWindowResize;
   mainWindow.onscroll = addOnScrollClassForHeader;
+  window.onhashchange = handleHashChange;
 };
 
 // create cards for resume page
@@ -286,4 +305,5 @@ window.onload = () => {
 
   // TODO
   //paintSkillBar(data2);
+  resumeSection.style.display = 'none';
 };
