@@ -2,18 +2,35 @@
 @import './resume.scss';
 @import './card.scss';
 @import './skillbar.scss';
+@import './subpage';
 main {
   width: 100%;
   @include ipad {
     & {
       padding: 20px 20px 0 20px;
+      position: absolute;
+      z-index: 70;
+      left: 0;
+      top: 70px;
+      height: calc(100vh - 70px);
+      overflow: scroll;
     }
   }
   @include mobile {
     & {
       padding: 20px 20px 50px 20px;
       position: absolute;
-      z-index: 50;
+      z-index: 70;
+      left: 0;
+      top: 70px;
+      height: calc(100vh - 70px);
+      overflow: scroll;
+    }
+  }
+  @include pc {
+    & {
+      position: absolute;
+      z-index: 70;
       left: 0;
       top: 70px;
       height: calc(100vh - 70px);

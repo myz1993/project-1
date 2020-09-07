@@ -2,10 +2,151 @@
 
 let menuButton;
 let sidebarMenu;
+let cardSectionForEducation;
+let cardSectionForExperience;
+let skillBarSectionForDesign;
+let skillBarSectionForCoding;
+let mainWindow;
+let headerDiv;
+
+const data = {
+  education: {
+    target: undefined,
+    data: [
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+    ],
+  },
+  experience: {
+    target: undefined,
+    data: [
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+
+      {
+        title: 'Melbourne University',
+        companyYear: '2020',
+        companyName: 'Apple Inc',
+        Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+      },
+    ],
+  },
+};
+
+const skillBarDataForDesign = [
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+];
+
+const skillBarDataForCoding = [
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+  {
+    title: 'Web Design',
+    width: '90%',
+  },
+];
+
+const cardDataForEducation = [
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+];
+
+const cardDataForExperience = [
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+
+  {
+    title: 'Melbourne University',
+    companyYear: '2020',
+    companyName: 'Apple Inc',
+    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
+  },
+];
 
 const init = () => {
   menuButton = document.querySelector('svg#menuButton');
   sidebarMenu = document.querySelector('div#sidebarMenu');
+  data.education.target = document.querySelector('div.resume_body_container_left .cardSection');
+  data.experience.target = document.querySelector('div.resume_body_container_right .cardSection');
+  skillBarSectionForDesign = document.querySelector('div.resume_footer_container_left .skillbarSection');
+  skillBarSectionForCoding = document.querySelector('div.resume_footer_container_right .skillbarSection');
+  mainWindow = document.querySelector('main');
+  headerDiv = document.querySelector('header');
 };
 
 const handleMenuButtonClick = () => {
@@ -16,68 +157,30 @@ const handleWindowResize = () => {
   sidebarMenu.classList.remove('active');
 };
 
+const addOnScrollClassForHeader = (() => {
+  let isScrollDownBefore = false;
+
+  return () => {
+    if (mainWindow.scrollTop === 0) {
+      headerDiv.classList.remove('onScroll');
+      isScrollDownBefore = false;
+    }
+
+    if (mainWindow.scrollTop > 0 && !isScrollDownBefore) {
+      headerDiv.classList.add('onScroll');
+      isScrollDownBefore = true;
+    }
+  };
+})();
+
 const addListeners = () => {
   menuButton.onclick = handleMenuButtonClick;
   window.onresize = handleWindowResize;
+  mainWindow.onscroll = addOnScrollClassForHeader;
 };
 
-window.onload = () => {
-  //init
-  init();
-  //add liseners
-  addListeners();
-};
 // create cards for resume page
-const cardSectionForEducation = document.querySelector('div.resume_body_container_left .cardSection');
-const cardSectionForExperience = document.querySelector('div.resume_body_container_right .cardSection');
-console.log(cardSectionForEducation);
-let cardDataForEducation = [
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-];
-
-let cardDataForExperience = [
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-
-  {
-    title: 'Melbourne University',
-    companyYear: '2020',
-    companyName: 'Apple Inc',
-    Description: 'Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.',
-  },
-];
-
-const createCardForEducation = (currentData) => {
+const createCard = (currentData) => {
   const divCard = document.createElement('div');
   divCard.classList.add('card');
 
@@ -107,77 +210,14 @@ const createCardForEducation = (currentData) => {
   divCard.appendChild(divCardCompany);
   divCard.appendChild(p);
 
-  cardSectionForEducation.appendChild(divCard);
+  return divCard;
 };
 
-const createCardForExperience = (currentData) => {
-  const divCard = document.createElement('div');
-  divCard.classList.add('card');
-
-  const divCardTitle = document.createElement('div');
-  divCardTitle.classList.add('card_title');
-  divCardTitle.innerText = currentData.title;
-  console.log(divCardTitle);
-
-  const divCardCompany = document.createElement('div');
-  divCardCompany.classList.add('card_company');
-
-  const spanCompanyYear = document.createElement('span');
-  spanCompanyYear.classList.add('companyYear');
-  spanCompanyYear.innerText = currentData.companyYear;
-
-  const spanCompanyName = document.createElement('span');
-  spanCompanyName.classList.add('companyName');
-  spanCompanyName.innerText = currentData.companyName;
-
-  const p = document.createElement('p');
-  p.innerText = currentData.Description;
-
-  divCardCompany.appendChild(spanCompanyYear);
-  divCardCompany.appendChild(spanCompanyName);
-
-  divCard.appendChild(divCardTitle);
-  divCard.appendChild(divCardCompany);
-  divCard.appendChild(p);
-
-  cardSectionForExperience.appendChild(divCard);
+const insertCardToPage = (card, target) => {
+  target.appendChild(card);
 };
-cardDataForEducation.forEach(createCardForEducation);
-cardDataForExperience.forEach(createCardForExperience);
 
 // create skillbar for resume page
-const skillBarSectionForDesign = document.querySelector('div.resume_footer_container_left .skillbarSection');
-const skillBarSectionForCoding = document.querySelector('div.resume_footer_container_right .skillbarSection');
-
-let skillBarDataForDesign = [
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-];
-
-let skillBarDataForCoding = [
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-  {
-    title: 'Web Design',
-    width: '90%',
-  },
-];
 
 const createSkillbarForDesign = (currentData) => {
   const skillBar = document.createElement('div');
@@ -221,5 +261,29 @@ const createSkillbarForCoding = (currentData) => {
   skillBarSectionForCoding.appendChild(skillBar);
 };
 
-skillBarDataForDesign.forEach(createSkillbarForDesign);
-skillBarDataForCoding.forEach(createSkillbarForCoding);
+const paintCards = (data) => {
+  const categories = Object.keys(data);
+  categories.forEach((category) => {
+    const target = data[category].target;
+    const cardsData = data[category].data;
+    cardsData.forEach((currentData) => {
+      const newCard = createCard(currentData);
+      insertCardToPage(newCard, target);
+    });
+  });
+};
+
+window.onload = () => {
+  //init
+  init();
+  //add liseners
+  addListeners();
+
+  paintCards(data);
+
+  skillBarDataForDesign.forEach(createSkillbarForDesign);
+  skillBarDataForCoding.forEach(createSkillbarForCoding);
+
+  // TODO
+  //paintSkillBar(data2);
+};

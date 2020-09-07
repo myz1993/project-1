@@ -1,9 +1,4 @@
 .resume {
-  max-width: 1032px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.1);
   &_header {
     padding: 30px 50px;
     background-color: $secondary_color;
@@ -26,6 +21,7 @@
 
   &_body {
     padding: 30px;
+    background-color: white;
     &_container {
       display: flex;
       @include mobile {
@@ -71,6 +67,9 @@
 
   &_footer {
     padding: 30px;
+    background-color: white;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     @include mobile {
       & {
         padding-top: 0;
