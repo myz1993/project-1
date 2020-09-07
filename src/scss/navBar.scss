@@ -18,6 +18,14 @@ header {
       z-index: 100;
     }
   }
+  @include ipad {
+    & {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+  }
 
   div.navIpad {
     display: none;
